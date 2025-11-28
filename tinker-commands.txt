@@ -1,0 +1,20 @@
+// Jalankan perintah ini satu per satu di Laravel Tinker
+// Buka terminal di folder ppdb, lalu ketik: php artisan tinker
+
+// Hapus user lama
+\App\Models\User::whereIn('email', ['admin@smk.com', 'verifikator@smk.com', 'keuangan@smk.com', 'kepsek@smk.com'])->delete();
+
+// Buat user admin
+\App\Models\User::create(['name' => 'Admin SMK', 'email' => 'admin@smk.com', 'password' => \Hash::make('password'), 'role' => 'admin', 'email_verified_at' => now()]);
+
+// Buat user verifikator
+\App\Models\User::create(['name' => 'Verifikator SMK', 'email' => 'verifikator@smk.com', 'password' => \Hash::make('password'), 'role' => 'verifikator', 'email_verified_at' => now()]);
+
+// Buat user keuangan
+\App\Models\User::create(['name' => 'Keuangan SMK', 'email' => 'keuangan@smk.com', 'password' => \Hash::make('password'), 'role' => 'keuangan', 'email_verified_at' => now()]);
+
+// Buat user kepsek
+\App\Models\User::create(['name' => 'Kepala Sekolah', 'email' => 'kepsek@smk.com', 'password' => \Hash::make('password'), 'role' => 'kepsek', 'email_verified_at' => now()]);
+
+// Cek user yang sudah dibuat
+\App\Models\User::all();

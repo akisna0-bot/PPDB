@@ -1,0 +1,153 @@
+/* Fix untuk foto yang terlalu besar di verifikator */
+
+/* Batasi ukuran gambar di preview dokumen */
+.document-preview img {
+    max-width: 300px;
+    max-height: 400px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Thumbnail kecil untuk list dokumen */
+.document-thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.document-thumbnail:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Modal preview gambar */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.image-modal img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Responsive image containers */
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    max-width: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* Khusus untuk gambar di verifikator */
+.verifikator-image {
+    max-width: 150px !important;
+    max-height: 150px !important;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.verifikator-image:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
+/* File preview cards */
+.file-preview-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.file-preview-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+/* Zoom button untuk gambar */
+.zoom-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .zoom-btn {
+    opacity: 1;
+}
+
+/* Loading placeholder untuk gambar */
+.image-loading {
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    border-radius: 8px;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .document-preview img {
+        max-width: 100%;
+        max-height: 200px;
+    }
+    
+    .image-modal img {
+        max-width: 95%;
+        max-height: 95%;
+    }
+    
+    .document-thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .verifikator-image {
+        max-width: 120px !important;
+        max-height: 120px !important;
+    }
+}

@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /executive/
+Disallow: /applicant/
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /api/
+Allow: /
+
+# Sitemap
+Sitemap: https://yourdomain.com/sitemap.xml

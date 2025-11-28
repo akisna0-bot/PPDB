@@ -1,0 +1,24 @@
+MANUAL UPLOAD STEPS TO GITHUB:
+
+1. Install Git for Windows:
+   Download from: https://git-scm.com/download/win
+
+2. Open Git Bash or Command Prompt in project folder:
+   cd c:\xampp\htdocs\ppdb
+
+3. Run these commands:
+   git init
+   git add .
+   git commit -m "Initial commit - PPDB Laravel Project"
+   git branch -M main
+   git remote add origin https://github.com/akisna0-bot/PPDB.git
+   git push -u origin main
+
+4. If prompted for credentials:
+   - Username: your GitHub username
+   - Password: your GitHub personal access token
+
+Files prepared:
+- .gitignore (created)
+- README.md (updated)
+- Project files ready for upload
